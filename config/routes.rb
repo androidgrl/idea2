@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  root 'application#index'
+
+  get "/sign_up" => "registrations#new"
+  post "/sign_up" => "registrations#create"
 end

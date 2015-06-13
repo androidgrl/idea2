@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :ideas
+  has_secure_password
 end
