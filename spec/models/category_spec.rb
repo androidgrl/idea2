@@ -13,8 +13,8 @@ RSpec.describe Category, type: :model do
     expect(category).to_not be_valid
   end
 
-  xit "responds with its created ideas" do
-    category.ideas.build(name: "Art in the Redwoods")
-    expect(category.ideas.map(&:name)).to eq(["Art in the Redwoods"])
+  it "responds with its created ideas" do
+    category.ideas.build(title: "Art in the Redwoods")
+    expect(category.ideas.map(&:title)).to eq(["Art in the Redwoods"])
   end
 end

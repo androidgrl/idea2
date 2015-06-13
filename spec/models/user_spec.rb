@@ -20,4 +20,9 @@ RSpec.describe User, type: :model do
 
     expect(user).to_not be_valid
   end
+
+  it "responds with its created ideas" do
+    user.ideas.build(title: "Art in the Redwoods")
+    expect(user.ideas.map(&:title)).to eq(["Art in the Redwoods"])
+  end
 end
