@@ -121,10 +121,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
     rouge (1.9.0)
-    rspec (3.2.0)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.1)
@@ -133,8 +129,6 @@ GEM
     rspec-mocks (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
-    rspec-pride (3.1.0)
-      rspec (~> 3.0)
     rspec-rails (3.2.2)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
@@ -195,7 +189,6 @@ DEPENDENCIES
   mrspec
   pg
   rails (= 4.2.1)
-  rspec-pride
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
