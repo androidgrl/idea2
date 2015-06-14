@@ -9,8 +9,8 @@ RSpec.feature "Admin adds category" do
     ApplicationController.any_instance.stubs(:current_user).returns(user)
     visit admin_categories_path
 
-    refute page.has_content?("Categories Index")
-    assert page.has_content?("The page you were looking for doesn't exist")
+    expect(page).to_not have_content("Categories Index")
+    expect(page).to have_content("The page you were looking for doesn't exist")
   end
 
   it 'logged in admin sees category index' do
@@ -21,7 +21,7 @@ RSpec.feature "Admin adds category" do
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
     visit admin_categories_path
 
-    assert page.has_content?("Categories Index")
+    expect(page).to have_content("Categories Index")
   end
 
   it 'logged in admin adds a new category' do
