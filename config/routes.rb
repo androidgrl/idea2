@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "/sign_out" => "sessions#destroy"
 
   resources :users, only: [:show]
-  resources :ideas, only: [:new, :create]
+  resources :ideas, only: [:new, :create, :edit, :update]
 
   namespace :admin do
     resources :categories, only: [:index, :new, :create]

@@ -1,8 +1,7 @@
 <h1><%= @user.username %>'s Ideas:</h1>
 <ol>
 <% @user.ideas.each do |idea| %>
-  <li>Title: <%= idea.title %>,
-  Description: <%= idea.description %></li>
+  <li>Title: <%= idea.title %>, Description: <%= idea.description %> <%= link_to "Edit", edit_idea_path(idea) %></li>
 <% end %>
 </ol>
 <%= link_to "Add Idea", new_idea_path(user_id: @user.id) %>
