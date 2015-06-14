@@ -18,3 +18,8 @@ end
     expect(page).to have_content(as)
   end
 
+  def expect_user_to_be_logged_out
+    expect(page).not_to have_content("Sign Out")
+    expect(page).to have_content("Sign In")
+    expect(page).to have_content("Sign Up")
+  end
