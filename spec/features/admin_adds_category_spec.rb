@@ -32,5 +32,12 @@ RSpec.feature "Admin adds category" do
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
     visit admin_categories_path
     click_on "Add Category"
+    fill_in "Name", with: "Arts"
+    click_on "Add Category"
+
+    # Assert we are on the next page by asserting something that is only on the next page
+    expect(page).to have_content 'Categories Index'
+    expect(page).to have_content 'Arts'
   end
+
 end

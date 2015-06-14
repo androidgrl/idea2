@@ -13,20 +13,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 
-group :development, :test do
-  gem 'byebug'
-
-  gem 'web-console', '~> 2.0'
-
-  gem 'capybara'
-  gem 'spring'
-  gem 'rspec-rails'
+group :development do
   gem 'better_errors'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'capybara'
+  #gem 'spring'
+  gem 'rspec-rails'
   gem 'mrspec'
   gem 'rspec-pride'
   gem 'mocha'
   gem 'launchy'
 end
-
-
