@@ -26,5 +26,5 @@ RSpec.feature "User adds idea" do
   end
 end
   # And I fill in the form's title and description fields and I select the category that the idea belongs to,  and I select the image that the idea belongs to,
-  # Then I see my User page again with the new idea added and the image and
+  # Then I see my User page again with the new idea added and the image that it's associated with and the category that it belongs to.
 
