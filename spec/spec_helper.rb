@@ -33,15 +33,15 @@ RSpec.configure do |config|
 
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
-  #needed>> config.mock_with :rspec do |mocks|
+  config.mock_with :rspec do |mocks|
     # changed this from :rspec
     # Prevents you from mocking or stubbing a method that does not exist on
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
-    # needed>> mocks.verify_partial_doubles = true
-  # needed>> end
+    mocks.verify_partial_doubles = true
+  end
 
-  config.mock_with :mocha
+  #used this to add mocha but not needed for rspec config.mock_with :mocha
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

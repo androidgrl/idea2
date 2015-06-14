@@ -6,7 +6,7 @@ RSpec.feature "Admin adds category" do
                       password: "password",
                       role: 0)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    ApplicationController.any_instance.stub(:current_user).and_return(user)
     visit admin_categories_path
 
     expect(page).to_not have_content("Categories Index")
@@ -18,7 +18,7 @@ RSpec.feature "Admin adds category" do
                         password: "password",
                         role: 1)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+    ApplicationController.any_instance.stub(:current_user).and_return(admin)
     visit admin_categories_path
 
     expect(page).to have_content("Categories Index")
@@ -29,7 +29,7 @@ RSpec.feature "Admin adds category" do
                         password: "password",
                         role: 1)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+    ApplicationController.any_instance.stub(:current_user).and_return(admin)
     visit admin_categories_path
     click_on "Add Category"
     fill_in "Name", with: "Arts"

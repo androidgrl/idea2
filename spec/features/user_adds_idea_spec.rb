@@ -6,6 +6,9 @@ RSpec.feature "User adds idea" do
                       password: "password",
                       role: 0)
 
+    #ApplicationController.any_instance.stub(:current_user).and_return(user)
+    #visit user_path(user)
+
     visit sign_in_path
     fill_in "Username", with: "Jamie"
     fill_in "Password", with: "password"
