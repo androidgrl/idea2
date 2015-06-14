@@ -26,6 +26,7 @@ group :development, :test do
   gem 'mrspec'
   gem 'rspec-pride'
   gem 'mocha'
+  gem 'launchy'
 end
 
 

@@ -23,4 +23,14 @@ RSpec.feature "Admin adds category" do
 
     assert page.has_content?("Categories Index")
   end
+
+  it 'logged in admin adds a new category' do
+     admin = User.create(username: "Jamie",
+                        password: "password",
+                        role: 1)
+
+    ApplicationController.any_instance.stubs(:current_user).returns(admin)
+    visit admin_categories_path
+    click_on "Add Category"
+  end
 end
