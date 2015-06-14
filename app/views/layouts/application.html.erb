@@ -11,7 +11,9 @@
     Hello, <%= current_user.username %>
     <%= link_to "Sign Out", root_path, method: :delete %>
   <% else %>
+    Don't have an account yet?
     <%= link_to "Sign Up", sign_up_path %>
+    Already signed-up?
   <% end %>
   <%= yield %>
 
