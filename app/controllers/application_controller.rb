@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def signed_in?
     session.key?(:user_id)
   end
+
+  def current_admin?
+    current_user && current_user.admin?
+  end
 end

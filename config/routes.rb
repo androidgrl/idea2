@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :ideas, only: [:new]
+
+  namespace :admin do
+    resources :categories, only: [:index]
+  end
 end
