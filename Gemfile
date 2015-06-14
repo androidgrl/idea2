@@ -25,6 +25,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'mrspec'
   gem 'rspec-pride'
+  gem 'mocha'
+  gem 'launchy'
 end
 
 
