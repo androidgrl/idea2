@@ -13,22 +13,24 @@ RSpec.feature "User adds idea" do
     #role: 0)
 
     #ApplicationController.any_instance.stub(:current_user).and_return(user)
-    #allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    #visit user_path(user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    visit user_path(@user)
 
-    visit sign_in_path
-    fill_in "Username", with: "Jamie"
-    fill_in "Password", with: "password"
-    within "form" do
-      click_on "Sign In"
-    end
+    #visit sign_in_path
+    #fill_in "Username", with: "Jamie"
+    #fill_in "Password", with: "password"
+    #within "form" do
+      #click_on "Sign In"
+    #end
 
     click_on "Add Idea"
     fill_in "Title", with: "Free Art"
     fill_in "Description", with: "Make art free day"
     click_on "Submit Idea"
 
-    #user.reload
+    @user.reload
+
+    visit user_path(@user)
     expect(page).to have_content("Jamie's Ideas:")
     expect(page).to have_content("Free Art")
   end
