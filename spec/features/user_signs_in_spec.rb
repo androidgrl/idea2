@@ -28,6 +28,6 @@ RSpec.feature "User signs in" do
     end
 
     expect(page).to have_content("Free Art")
-    expect(page).to have_link("Add Idea", href: new_idea_path)
+    expect(page).to have_link("Add Idea", href: new_idea_path(user_id: @user.id))
   end
 end

@@ -1,21 +1,24 @@
 require 'rails_helper'
 
 RSpec.feature "User adds idea" do
-  xit 'a user can add an idea' do
+  it 'a user can add an idea' do
     user = User.create(username: "Jamie",
                       password: "password",
                       role: 0)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
-
-    visit user_path(user)
+    visit sign_in_path
+    fill_in "Username", with: "Jamie"
+    fill_in "Password", with: "password"
+    within "form" do
+      click_on "Sign In"
+    end
 
     click_on "Add Idea"
     fill_in "Title", with: "Free Art"
     fill_in "Description", with: "Make art free day"
     click_on "Submit Idea"
 
-    expect(page).to have_content("Jamie's Ideas")
+    expect(page).to have_content("Jamie's Ideas:")
     expect(page).to have_content("Free Art")
   end
 end
