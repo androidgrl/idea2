@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get "/sign_up" => "registrations#new"
   post "/sign_up" => "registrations#create"
+
+  resources :users, only: [:show]
 end
