@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "User signs in" do
-  scenario "successfully" do
+  it 'signs in user' do
+    User.create(username: "Jamie", password: "password")
     visit sign_in_path
 
     fill_in "Username", with: "Jamie"
