@@ -1,9 +1,10 @@
 <h1>Add Idea:</h1>
 <%= form_for(@idea) do |f| %>
   <%= f.label :title %>
-  <%= f.text_area :title %>
+  <%= f.text_area :title %></br>
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description %></br>
   <%= f.hidden_field :user_id %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %></br>
   <%= f.submit "Submit Idea" %>
 <% end %>
